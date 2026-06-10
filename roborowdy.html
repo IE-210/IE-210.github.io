@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoboRowdy | Israel Elizondo</title>
+  <meta name="description" content="RoboRowdy: an autonomous robot automating 3D print farm post-processing. Siemens Immersive Design Challenge finalist. FEA, topology optimization, and digital twin development.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Israel Elizondo</a>
+    <div class="nav-links">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="hero-eyebrow">Siemens Immersive Design Challenge · Finalist · Realize Live 2026</p>
+    <h1>RoboRowdy</h1>
+    <p class="hero-sub">
+      An autonomous robot that automates 3D print farm post-processing:
+      removing finished parts, cleaning build plates, and restarting prints,
+      so a farm can run continuously without a person standing over it.
+    </p>
+
+    <div class="title-block">
+      <div class="tb-cell">
+        <span class="tb-label">Team</span>
+        <span class="tb-value">210 Robotics · UTSA</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">My role</span>
+        <span class="tb-value">Project Lead</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Result</span>
+        <span class="tb-value accent">National Finalist</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Presented</span>
+        <span class="tb-value">Realize Live, Detroit</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="dim"><span class="dim-label"><span class="num">01</span>The Problem</span></div>
+
+  <section>
+    <p class="lede">
+      3D print farms stall on human bottlenecks. Every finished print needs someone
+      to pull the part, clean the plate, and queue the next job. Overnight and
+      weekend capacity goes unused because nobody is there to reset the machines.
+    </p>
+    <p>
+      RoboRowdy closes that loop. It monitors the farm, detects completed prints,
+      removes parts from the build plate, preps the plate, and triggers the next
+      print in the queue. The goal is simple: printers that never sit idle.
+    </p>
+
+    <figure>
+      <div class="ph">ADD PHOTO: the print farm / problem context shot</div>
+      <figcaption><span class="fig-num">FIG. 01</span> &nbsp;Print farm before automation</figcaption>
+    </figure>
+  </section>
+
+  <div class="dim"><span class="dim-label"><span class="num">02</span>The System</span></div>
+
+  <section>
+    <p>
+      The robot runs on an NVIDIA Jetson Orin Nano with six onboard cameras.
+      AprilTag fiducial markers give it precise positioning relative to each
+      printer, and SimplyPrint cloud integration lets it read job status and
+      restart prints remotely. Structural components are 3D printed in
+      carbon-fiber reinforced PLA and PETG, designed in Siemens NX.
+    </p>
+
+    <table class="spec-table">
+      <tr><th>Subsystem</th><th>Implementation</th></tr>
+      <tr><td>Compute</td><td>NVIDIA Jetson Orin Nano</td></tr>
+      <tr><td>Vision</td><td>Six onboard cameras + AprilTag fiducial positioning</td></tr>
+      <tr><td>Farm integration</td><td>SimplyPrint cloud API for job status and restart</td></tr>
+      <tr><td>Structure</td><td>3D-printed PLA-CF and PETG-CF components</td></tr>
+      <tr><td>CAD</td><td>Siemens NX (parts, assemblies, digital twin geometry)</td></tr>
+      <tr><td>Simulation</td><td>Altair Inspire FEA + topology optimization, Simcenter 3D</td></tr>
+    </table>
+
+    <figure>
+      <div class="ph">ADD IMAGE: NX assembly render or annotated system diagram</div>
+      <figcaption><span class="fig-num">FIG. 02</span> &nbsp;Full assembly in Siemens NX</figcaption>
+    </figure>
+  </section>
+
+  <div class="dim"><span class="dim-label"><span class="num">03</span>Simulation &amp; Digital Twin</span></div>
+
+  <section>
+    <p>
+      Off-the-shelf material libraries don't include carbon-fiber filament blends,
+      so I built custom material cards from Bambu Lab datasheets for PLA-CF and
+      PETG-CF. With accurate material properties in place, I ran FEA in Altair
+      Inspire on load-bearing components, checking Von Mises stress, displacement,
+      and Factor of Safety before anything was printed.
+    </p>
+    <p>
+      Topology optimization then stripped unnecessary mass from structural parts
+      while holding the required stiffness, which matters when every printed gram
+      adds print time and cost. In parallel, the team developed a digital twin of
+      the robot in Siemens NX and Simcenter 3D, mirroring the closed-loop
+      design-simulate-build workflow Siemens calls Xcelerator.
+    </p>
+
+    <figure>
+      <div class="ph">ADD IMAGE: Von Mises stress plot or FoS contour from Altair Inspire</div>
+      <figcaption><span class="fig-num">FIG. 03</span> &nbsp;FEA validation: Von Mises stress on structural component</figcaption>
+    </figure>
+
+    <figure>
+      <div class="ph">ADD IMAGE: topology optimization before/after comparison</div>
+      <figcaption><span class="fig-num">FIG. 04</span> &nbsp;Topology optimization: original vs. optimized geometry</figcaption>
+    </figure>
+  </section>
+
+  <div class="dim"><span class="dim-label"><span class="num">04</span>Outcomes</span></div>
+
+  <section>
+    <p class="lede">
+      RoboRowdy reached the national finalist round of the Siemens Immersive
+      Design Challenge. The team presented on stage at Realize Live Americas 2026
+      in Detroit, demonstrated the project in a Sony XR immersive design
+      experience, and recorded a podcast series about the build with Siemens.
+    </p>
+    <p>
+      Getting there meant more than engineering: we crated and shipped roughly
+      350 pounds of robot and custom wooden crate across the country, coordinated
+      with Siemens and UTSA communications teams, and told the story of an
+      all-freshman team building something real.
+    </p>
+
+    <figure>
+      <div class="ph">ADD PHOTO: team on stage at Realize Live or with the robot at the showcase</div>
+      <figcaption><span class="fig-num">FIG. 05</span> &nbsp;Realize Live Americas 2026, Detroit</figcaption>
+    </figure>
+
+    <div class="btn-row">
+      <a class="btn primary" href="index.html#contact">Get in touch</a>
+      <a class="btn" href="index.html">Back to home</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="title-block">
+      <div class="tb-cell">
+        <span class="tb-label">Project</span>
+        <span class="tb-value">RoboRowdy</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Rev</span>
+        <span class="tb-value">A</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Drawn by</span>
+        <span class="tb-value">I. Elizondo</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Date</span>
+        <span class="tb-value">JUN 2026</span>
+      </div>
+    </div>
+    <p class="footer-note">Built by hand. Hosted on GitHub Pages.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
